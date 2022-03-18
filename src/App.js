@@ -3,6 +3,7 @@ import { AdvancedForm } from './components/forms/AdvancedForm'
 
 export default function App() {
   const [formValues, setFormValues] = useState([])
+  const agentName = "Agent"
 
   const handleSubmit = async (values, { setSubmitting }) => {
     setSubmitting(true)
@@ -33,6 +34,32 @@ export default function App() {
     { name: 'description', label: 'Description', componentType: 'textarea', required: true},
   ]
 
+  const formIssue = [
+    {
+      summary : formValues.summary,
+      description : formValues.description,
+      project : {
+          id : 2
+      },
+      category: {
+          name: formValues.category
+      }
+    }
+  ]
+
+  const formMonitoring = [
+    {
+      users: [
+        {
+          name: formValues.name
+        },
+        {
+          name: agentName
+        }
+      ]
+    }
+  ]
+
   return (
     <>
       <h1>Advanced Form</h1>
@@ -42,7 +69,8 @@ export default function App() {
           <AdvancedForm schema={formSchema} onSubmit={handleSubmit} />
         </div>
         <div className="results section">
-          <pre>{JSON.stringify(formValues, null, 2)}</pre>
+          <pre>{JSON.stringify(formIssue, null, 2)}</pre>
+          <pre>{JSON.stringify(formMonitoring, null, 2)}</pre>
         </div>
       </div>
     </>
