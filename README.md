@@ -57,4 +57,6 @@ Simply pass the schema into the component, and handle the submit event.
 ```
 
 run this command after you clone:
-````yarn add formik react-scripts yup````
+```YAML 
+yarn add formik react-scripts yup
+```
