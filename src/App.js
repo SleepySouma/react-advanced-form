@@ -34,8 +34,7 @@ export default function App() {
     { name: 'description', label: 'Description', componentType: 'textarea', required: true},
   ]
 
-  const formIssue = [
-    {
+  const formIssue = {
       summary : formValues.summary,
       description : formValues.description,
       project : {
@@ -44,11 +43,9 @@ export default function App() {
       category: {
           name: formValues.category
       }
-    }
-  ]
+  }
 
-  const formMonitoring = [
-    {
+  const formMonitoring = {
       users: [
         {
           name: formValues.name
@@ -57,19 +54,22 @@ export default function App() {
           name: agentName
         }
       ]
-    }
-  ]
+  }
 
-  return (
+  return ( //comment outside jsx elmt
     <>
       <h1>Formulaire de Réclamation</h1>
 
-      <div className="flex">
+      <div className="flex">  {/* comment inside a jsx elmt */}
         <div className="form section">
           <AdvancedForm schema={formSchema} onSubmit={handleSubmit} />
-        </div>
+        </div> 
+        {/* comment inside a jsx elmt */}
         <div className="results section">
+          <h2>JSON result</h2>
+          <h4>Sent to create an issue:</h4>
           <pre>{JSON.stringify(formIssue, null, 2)}</pre>
+          <h4>Sent to monitor an issue:</h4>
           <pre>{JSON.stringify(formMonitoring, null, 2)}</pre>
         </div>
       </div>
