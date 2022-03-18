@@ -55,3 +55,6 @@ Simply pass the schema into the component, and handle the submit event.
 ```jsx
 <AdvancedForm schema={formSchema} onSubmit={handleSubmit} />
 ```
+
+run this command after you clone:
+````yarn add formik react-scripts yup````

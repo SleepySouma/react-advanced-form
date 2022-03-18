@@ -13,10 +13,10 @@ export default function App() {
   }
 
   const formSchema = [
-    { name: 'name', label: 'Name', componentType: 'text', required: true },
+    { name: 'name', label: 'Nom', componentType: 'text', required: true },
     {
       name: 'category',
-      label: 'Category',
+      label: 'Catégorie',
       componentType: 'select',
       options: [
         { label: 'Abonnement et facture', value: 'Abonnement et facture'},
@@ -30,7 +30,7 @@ export default function App() {
         { label: 'Souscription', value: 'Souscription' },
       ],
     },
-    { name: 'summary', label: 'Summary', componentType: 'text', required: true},
+    { name: 'summary', label: 'Résumé', componentType: 'text', required: true},
     { name: 'description', label: 'Description', componentType: 'textarea', required: true},
   ]
 
@@ -62,7 +62,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Advanced Form</h1>
+      <h1>Formulaire de Réclamation</h1>
 
       <div className="flex">
         <div className="form section">
