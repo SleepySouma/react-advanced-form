@@ -3,7 +3,7 @@ import { AdvancedForm } from './components/forms/AdvancedForm'
 
 export default function App() {
   const [formValues, setFormValues] = useState([])
-  const agentName = "Agent"
+  const agentName = "Agent";
 
   const handleSubmit = async (values, { setSubmitting }) => {
     setSubmitting(true)
