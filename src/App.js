@@ -13,42 +13,24 @@ export default function App() {
 
   const formSchema = [
     { name: 'name', label: 'Name', componentType: 'text', required: true },
-    { name: 'playable', label: 'Playable', componentType: 'checkbox' },
     {
-      name: 'race',
-      label: 'Race',
-      componentType: 'radioGroup',
-      options: [
-        { label: 'Human', value: 'human' },
-        { label: 'Dwarf', value: 'dwarf' },
-        { label: 'Elf', value: 'elf' },
-      ],
-    },
-    {
-      name: 'class',
-      label: 'Class',
+      name: 'category',
+      label: 'Category',
       componentType: 'select',
       options: [
-        { label: 'Ranger', value: 'ranger' },
-        { label: 'Wizard', value: 'wizard' },
-        { label: 'Healer', value: 'healer' },
+        { label: 'Abonnement et facture', value: 'Abonnement et facture'},
+        { label: 'API de paiement', value: 'API de paiement' },
+        { label: 'Litiges', value: 'Litiges' },
+        { label: 'Problème technique', value: 'Problème technique' },
+        { label: 'Rapports financiers', value: 'Rapports financiers' },
+        { label: 'Refus de paiement', value: 'Refus de paiement' },
+        { label: 'Fraude', value: 'Fraude' },
+        { label: 'Vérification', value: 'Vérification' },
+        { label: 'Souscription', value: 'Souscription' },
       ],
     },
-    {
-      name: 'spell',
-      label: 'Spell',
-      componentType: 'select',
-      options: [
-        { label: 'Fire', value: 'fire' },
-        { label: 'Ice', value: 'ice' },
-      ],
-      condition: { key: 'class', value: 'wizard', operator: '=' },
-    },
-    {
-      name: 'description',
-      label: 'Description',
-      componentType: 'textarea',
-    },
+    { name: 'summary', label: 'Summary', componentType: 'text', required: true},
+    { name: 'description', label: 'Description', componentType: 'textarea', required: true},
   ]
 
   return (
