@@ -3,20 +3,16 @@ import { AdvancedForm } from './components/forms/AdvancedForm'
 import axios from 'axios';
 
 export default function App() {
-  const [formValues, setFormValues] = useState([])
-  const agentName = "Agent";
-  
+
   //@mantis
   const mantisApiURL = 'http://localhost:8069/mantisbt/api/rest/issues/';
   const apiKey = 'Aqn6CisQ5YwLRuX2lTH8zLQOEYz-LeAj';
-  
+  const agentName = "Agent";
 
-  const handleSubmit = async (values, { setSubmitting }) => {
-    setSubmitting(true)
-    setFormValues(values)
-    await postSubmission()
-    setSubmitting(false)
-  }
+
+  //States
+  const [formValues, setFormValues] = useState([])
+
 
   const formSchema = [
     { name: 'name', label: 'Nom - Provisoire', componentType: 'text', required: true },
@@ -62,6 +58,14 @@ export default function App() {
       ]
   }
 
+  const handleSubmit = async (values, { setSubmitting }) => {
+    setSubmitting(true)
+    setFormValues(values)
+    await postSubmission()
+    setSubmitting(false)
+  }
+
+
   //------------AXIOS PART------------//
   
   const postSubmission = async () => {
@@ -86,11 +90,7 @@ export default function App() {
       });
       console.log(resultMantis);
 
-    /*how to get resulted issue's id:
-    let text = '{"issue":{"id":47,';
-    const myArray = text.split(",");
-    let result = myArray[0].substring(15);
-    */
+    //how to get resulted issue's id
     const resultRawData = resultMantis.data;
     console.log(resultRawData.issue.id); //for when the .data is returned as JSON type
     //const resultCropped = resultRawData.split(","); //for when the .data is returned as a string

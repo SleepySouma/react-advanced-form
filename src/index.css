@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 1rem;
   background: #F9FAFC;
+  color: #0F153C;
   font-family: system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -18,7 +19,12 @@ h1 {
   max-width: 1000px;
   color: #0F153C;
   font-style: oblique;
-  font-weight: 800;
+  font-weight: 700;
+  text-shadow: 5px, 1px, 2px, #4528EB;
+}
+
+h4 {
+  color: #20C3E6;
 }
 
 pre {
@@ -96,11 +102,12 @@ pre {
 
 .advanced-form button {
   border: 1px solid #4528EB;
-  border-radius: 4px;
+  border-radius: 3px;
+  font-family: system-ui, sans-serif;
   background: #4528EB;
   color: white;
   padding: 0.5rem 1rem;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
 }
