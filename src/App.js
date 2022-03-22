@@ -14,7 +14,6 @@ export default function App() {
   const handleSubmit = async (values, { setSubmitting }) => {
     setSubmitting(true)
     setFormValues(values)
-    await new Promise((r) => setTimeout(r, 1000))
     await postSubmission()
     setSubmitting(false)
   }
@@ -63,7 +62,7 @@ export default function App() {
       ]
   }
 
-  //-------------------------------AXIOS PART------------------------------------------------//
+  //------------AXIOS PART------------//
   
   const postSubmission = async () => {
 
@@ -86,6 +85,7 @@ export default function App() {
         }
       });
 
+      console.log(typeof(formValues.summary));
       console.log(resultMantis);
 
     /*how to get resulted issue's id:
