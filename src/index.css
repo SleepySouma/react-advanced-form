@@ -17,6 +17,8 @@ h1 {
   margin: 1rem auto 2rem;
   max-width: 1000px;
   color: #0F153C;
+  font-style: oblique;
+  font-weight: 800;
 }
 
 pre {
