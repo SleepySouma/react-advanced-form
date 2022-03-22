@@ -84,8 +84,6 @@ export default function App() {
           'content-type': 'application/json',
         }
       });
-
-      console.log(typeof(formValues.summary));
       console.log(resultMantis);
 
     /*how to get resulted issue's id:
