@@ -44,7 +44,18 @@ export default function App() {
       },
       category: {
           name: formValues.category
-      }
+      },
+      files: [
+        {
+            name: "test.txt",
+            content: "VGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4NClRoaXMgaXMgYSBURVNULg0KVGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4="
+        },
+        {
+            name: "test2.txt",
+            content: "VGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4NClRoaXMgaXMgYSBURVNULg0KVGhpcyBpcyBhIFRFU1QuDQpUaGlzIGlzIGEgVEVTVC4="
+        }
+      ]
+
   }
 
   const formMonitoring = {
@@ -70,16 +81,16 @@ export default function App() {
   
   const postSubmission = async () => {
 
-    //@mantis 
+    //@Issue Creation payload
     const payloadMantis = {
       ...formIssue,
     }
-    //@mantisMonitoring
+    //@Adding monitor payload
     const payloadMonitor = {
       ...formMonitoring
     }
 
-    //@mantis
+    //@Issue Creation
     const resultMantis = await axios.post(mantisApiURL, 
       payloadMantis,
       {
@@ -89,6 +100,9 @@ export default function App() {
         }
       });
       console.log(resultMantis);
+
+
+    //@Adding monitor
 
     //how to get resulted issue's id
     const resultRawData = resultMantis.data;
